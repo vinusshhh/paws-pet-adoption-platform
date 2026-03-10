@@ -1,0 +1,11 @@
+/* General Styles */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+body { background: linear-gradient(to right, #FF7F50, #FF6F61); display: flex; justify-content: center; align-items: center; padding: 0 20px; min-height: 100vh; }
+.container { background-color: #fff; padding: 40px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); width: 100%; max-width: 420px; text-align: center; border: 2px solid #FF6F61; margin-top: 20px; position: relative; }
+.brand { font-size: 40px; color: #FF6F61; font-weight: bold; margin-bottom: 30px; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); }
+form { display: flex; flex-direction: column; gap: 20px; }
+input, select { padding: 14px; border: 2px solid #ddd; border-radius: 25px; font-size: 16px; outline: none; transition: all 0.3s ease; background-color: #f9f9f9; color: #333; }
+button { padding: 14px; background-color: #FF6F61; color: white; border: none; border-radius: 25px; font-size: 16px; cursor: pointer; transition: background-color 0.3s ease, transform 0.3s ease; }
+button:hover { background-color: #FF4A38; transform: scale(1.05); }
+.dog-card img { width: 100%; height: auto; object-fit: contain; border-radius: 10px; margin-bottom: 10px; }
+.dog-card { border: 1px solid #ccc; padding: 16px; border-radius: 12px; width: 300px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: flex; flex-direction: column; align-items: center; overflow: hidden; }

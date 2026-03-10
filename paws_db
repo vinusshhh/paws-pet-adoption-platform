@@ -1,0 +1,34 @@
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    email VARCHAR(255) UNIQUE,
+    contact VARCHAR(20),
+    location VARCHAR(255),
+    password VARCHAR(255),
+    role ENUM('giver', 'adopter')
+);
+
+CREATE TABLE pets (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    breed VARCHAR(255) NOT NULL,
+    age INT NOT NULL,
+    medical_history TEXT,
+    adoption_fee DECIMAL(10,2),
+    image VARCHAR(255),
+    status ENUM('Available', 'Adopted') DEFAULT 'Available',
+    giver_email VARCHAR(255) NOT NULL,
+    location VARCHAR(255),
+    approved_by_giver ENUM('Pending', 'Approved') DEFAULT 'Pending',
+    FOREIGN KEY (giver_email) REFERENCES users(email) ON DELETE CASCADE
+);
+
+CREATE TABLE adoption_requests (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    adopter_email VARCHAR(255) NOT NULL,
+    pet_id INT NOT NULL,
+    status ENUM('Pending', 'Accepted', 'Rejected') DEFAULT 'Pending',
+    request_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (adopter_email) REFERENCES users(email) ON DELETE CASCADE,
+    FOREIGN KEY (pet_id) REFERENCES pets(id) ON DELETE CASCADE
+);

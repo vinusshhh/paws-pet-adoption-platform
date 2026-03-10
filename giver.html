@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Give a Dog for Adoption</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Give Your Dog for Adoption</h2>
+        <form action="giver_process.php" method="POST" enctype="multipart/form-data">
+            <label for="dog_name">Dog's Name:</label>
+            <input type="text" id="dog_name" name="dog_name" required>
+
+            <label for="breed">Breed:</label>
+            <input type="text" id="breed" name="breed" required>
+
+            <label for="age">Age:(in months)</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="medical_history">Medical History:</label>
+            <textarea id="medical_history" name="medical_history" rows="3" required></textarea>
+
+            <label for="adoption_fee">Adoption Fee (if any):</label>
+            <input type="number" id="adoption_fee" name="adoption_fee">
+
+            <label for="dog_image">Upload Dog's Image:</label>
+            <input type="file" id="dog_image" name="dog_image" accept="image/*" required>
+
+            <button type="submit">Submit</button>
+
+            <a href="giver_dashboard.php" class="skip-btn">Skip to My Dogs →</a>
+
+        </form>
+    </div>
+</body>
+</html>

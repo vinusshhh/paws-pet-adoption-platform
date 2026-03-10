@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAWS - Login & Signup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="brand">🐾 PAWS 🐾</h1>
+        
+        <!-- Login Form -->
+        <div id="login-container">
+            <h2>Login</h2>
+            <form id="login-form" action="index.php" method="POST">
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>            
+            <p>New here? <a href="#" id="show-signup">Sign up</a></p>
+        </div>
+        
+        <!-- Signup Form -->
+        <div id="signup-container" style="display: none;">
+            <h2>Sign Up</h2>
+            <form action="signup.php" method="POST" onsubmit="return validatePassword()">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="text" name="contact" placeholder="Contact Number" required>
+                <input type="text" name="location" placeholder="Location" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <select name="role" required>
+                    <option value="giver">Giver</option>
+                    <option value="adopter">Adopter</option>
+                </select>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+            
+            <script>
+            function validatePassword() {
+                let password = document.getElementById("password").value;
+                let confirm_password = document.getElementById("confirm_password").value;
+            
+                if (password !== confirm_password) {
+                    alert("Passwords do not match! Please try again.");
+                    return false; // Prevent form submission
+                }
+                return true;
+            }
+            </script>                        
+            <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+        </div>
+    </div>
+    
+    <script>
+        // Toggle between login and signup
+        document.getElementById("show-signup").addEventListener("click", function() {
+            document.getElementById("login-container").style.display = "none";
+            document.getElementById("signup-container").style.display = "block";
+        });
+        document.getElementById("show-login").addEventListener("click", function() {
+            document.getElementById("signup-container").style.display = "none";
+            document.getElementById("login-container").style.display = "block";
+        });
+
+        // Password confirmation validation
+        document.getElementById("signupForm").addEventListener("submit", function(event) {
+    let password = document.getElementById("password").value;
+    let confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (password !== confirmPassword) {
+        event.preventDefault(); // Stop form submission
+        alert("Passwords do not match! Please try again.");
+    }
+});
+    </script>
+</body>
+</html>
