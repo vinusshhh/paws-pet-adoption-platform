@@ -1,21 +1,31 @@
-# PAWS - Pet Adoption Platform
+# PAWS – Pet Adoption Platform
 
-PAWS is a web application that connects pet givers with adopters.
+PAWS is a web application designed to connect pet givers with potential adopters. 
+The platform allows users to list pets for adoption and enables adopters to browse 
+available pets and send adoption requests.
 
 ## Features
 - User login and signup
-- Role-based system (Giver / Adopter)
-- Pet listing
+- Role based system (Giver / Adopter)
+- Pet listing with images and details
 - Adoption request system
-- Notification system
+- Request approval and contact sharing
 
 ## Tech Stack
-HTML, CSS, JavaScript  
-PHP  
-MySQL  
+Frontend:
+HTML, CSS, JavaScript
+
+Backend:
+PHP
+
+Database:
+MySQL
+
+Server:
 Apache (XAMPP)
 
-## Setup
-1. Clone the repository
-2. Import the MySQL database
-3. Run using XAMPP
+## How to Run
+1. Install XAMPP
+2. Place the project in `htdocs`
+3. Import the database into MySQL
+4. Run `http://localhost/paws-pet-adoption-platform`
